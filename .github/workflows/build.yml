@@ -17,6 +17,7 @@ jobs:
       - name: cv
         uses: dante-ev/latex-action@latest
         with:
+          compiler: xelatex
           root_file: ${{ env.FILE }}
           working_directory: ${{ env.DIR }}
       - name: move
