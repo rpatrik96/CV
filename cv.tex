@@ -34,10 +34,13 @@
   \usepackage{lmodern}
   \usepackage{unicode-math}
   \defaultfontfeatures{Ligatures=TeX}
-  \setmainfont{Latin Modern Roman}
-  \setsansfont{Latin Modern Sans}
-  \setmonofont{Latin Modern Mono}
-  \setmathfont{Latin Modern Math} 
+    % fontspec allows you to use TTF/OTF fonts directly
+    \setmainfont{MinionPro}[ 
+    Extension = .otf,
+    BoldFont = *-Bold,
+    ItalicFont = *-It,
+    UprightFont = *-Regular,
+    ]
 \else
   \usepackage[T1]{fontenc}
   \usepackage{lmodern}
@@ -70,17 +73,6 @@
 %	FONT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% fontspec allows you to use TTF/OTF fonts directly
-\usepackage{fontspec}
-\defaultfontfeatures{Ligatures=TeX}
-
-
-\setmainfont{MinionPro}[ 
-Extension = .otf,
-BoldFont = *-Bold,
-ItalicFont = *-It,
-UprightFont = *-Regular,
-]
 
 \usepackage[calcwidth]{titlesec}				
 \usepackage{multicol}
