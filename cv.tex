@@ -1,0 +1,245 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.11 (19/6/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the moderncv.cls and .sty files to be in the same 
+% directory as this .tex file. These files provide the resume style and themes 
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt,a4paper,roman]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+
+
+
+\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{customblue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage[nodayofweek]{datetime}
+\usepackage{multicol} % Used for itemizing items in multiple columns
+
+\usepackage[scale=0.75]{geometry} % Reduce document margins
+%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+
+
+\usepackage{xstring}
+\usepackage[normalem]{ulem} 
+
+\let\originalbibitem\bibitem
+\def\bibitem#1#2\par{%
+  \noexpandarg
+  \originalbibitem{#1}
+  \StrSubstitute{#2}{Patrik Reizinger}{{\color{customblue}{\textbf{Patrik Reizinger}}}}\par}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	FONT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% fontspec allows you to use TTF/OTF fonts directly
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+
+
+\setmainfont{MinionPro}[ 
+Extension = .otf,
+BoldFont = *-Bold,
+ItalicFont = *-It,
+UprightFont = *-Regular,
+]
+
+\usepackage[calcwidth]{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright\color{customblue}}{}{0em}{\titlerule[1pt]}[\vspace{-4.55ex}\rule{\titlewidth}{2.5pt}\vspace{1.75ex}]
+
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	NAME AND CONTACT INFORMATION SECTION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\firstname{Patrik} % Your first name
+\familyname{Reizinger} % Your last name
+
+% All information in this block is optional, comment out any lines you don't need
+% \title{Curriculum Vitae}
+% \address{XY}{Z}
+
+
+\extrainfo{
+\href{mailto:rpatrik1996@gmail.com}{\raisebox{-0.05\height}{\color{customblue}\faEnvelope} \ rpatrik1996@gmail.com} \\
+\href{tel:+36306137236}{\raisebox{-0.05\height}{\color{customblue}\faMobile} \ +36-30-613-7236} \\
+\href{https://github.com/rpatrik96}{\raisebox{-0.05\height}{\color{customblue}\faGithub}\ rpatrik96}\\ 
+\href{https://linkedin.com/in/patrik-reizinger}{\raisebox{-0.05\height}{\color{customblue}\faLinkedin}\ patrik-reizinger}\\
+\href{https://rpatrik96.github.io}{\raisebox{-0.05\height}{\color{customblue}\faGlobe} \ rpatrik96.github.io} 
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\makecvtitle % Print the CV title
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Education}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% \cventry{years}{degree/job title}{institution/employer}
+% {localization}{optional: grade/...}
+% {optional: comment/job description}
+
+\cventry{2021--ongoing}{Machine Learning Ph.D.}{International Max Planck Research School for Intelligent Systems/University of Tübingen/ELLIS}{Tübingen, Germany}{}{\textbf{Thesis:} Causal Representation Learning\\ \textbf{Supervisors:} Wieland Brendel, Ferenc Huszár, Matthias Bethge, Bernhard Schölkopf\\
+\textbf{ELLIS exchange at the University of Cambridge:} 2022.10--2023.03.}
+
+\cventry{2019--2021}{Electrical Engineering M.Sc.}{Budapest University of Technology and Economics}{Budapest, Hungary}{GPA~5.0/5.0 (valedictorian)}{\textbf{Thesis:} Development of an Attitude Determination and Control System for CubeSats on LEO orbits\\
+\textbf{Supervisors:} Ferenc Vajda, Márton Szemenyei\\
+\textbf{Extracurricular:} iMSc program for talented students}
+
+\cventry{2015--2019}{Electrical Engineering B.Sc.}{Budapest University of Technology and Economics}{Budapest, Hungary}{GPA~5.0/5.0 (valedictorian)}{\textbf{Thesis:} Development of a 3D input device for virtual working environments\\
+\textbf{Supervisors:} Ferenc Vajda, Márton Szemenyei\\
+\textbf{Extracurricular:} German language program in cooperation with the Karlsruhe Insitute of Technology\\
+\textbf{Exchange semester at the Karlsruhe Insitute of Technology:} 2018.10--2019.02.}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Experience}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cventry{2020.02--2021.01.}{Deep Learning Student Researcher}{Budapest University of Technology and Economics}{Budapest, Hungary}{}{Time series data analysis with deep learning}
+\cventry{2019.02--2021.02.}{Control Engineering Intern}{C3S Electronics Development LLC}{Budapest, Hungary}{}{CubeSat attitude determination and control}
+\cventry{2019.01--02.}{FPGA Developer Intern}{Karlsruhe Institute of Technology}{Karlsruhe, Germany}{}{FPGA time synchronisation}
+\cventry{2018.06--08.}{Image Processing Intern}{Fraunhofer Institute for Factory Operation and Automation IFF}{Magdeburg, Germany}{}{development of automated visual inspection tool in C++}
+\cventry{2017.06--08.}{Data Scientist Intern}{Gravity R\&D}{Budapest, Hungary}{customer data analysis in Python}{}
+\cventry{2016.09--2019.01.}{Virtual Reality Peripheral Device Developer}{Budapest University of Technology and Economics}{Budapest, Hungary}{}{Development of a 3D input device for virtual working environments}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Honors and Awards}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cventry{2022}{NeurIPS Scholar Award}{}{}{}{}{}
+\cventry{2021}{Pro Scientia Gold Medal}{National Scientific Students’ Association Hungary}{top 0.03\%}{}{}{}{}
+\cventry{2021}{Hope Badge Special Award to The Most Promising Young Scientist}{Pro Scientia Gold Medalists' Association}{top 0.003\%}{}{}{}{}
+\cventry{2019,2021}{$\mathbf{1^{\mathrm{st}}}$ Prize at National Scientific Students’ Association Conference}{National Scientific Students’ Association Hungary}{top 0.3\%}{}{\begin{itemize}
+    \item Attention-based curiosity in multi-agent reinforcement learning environments (2021)
+    \item Stochastic weight matrix-based regularization methods for deep neural networks (2019)
+    \item Development of a 3D input device for virtual working environments (2019)
+\end{itemize}}
+\cventry{2017-2019}{$\mathbf{1^{\mathrm{st}}}$ Prize at Scientific Students’ Association Conference}{Budapest University of Technology and Economics}{top 0.3\%}{}{\begin{itemize}
+    \item Attention-based curiosity in multi-agent reinforcement learning environments (2019)
+    \item Development of an Attitude Determination and Control System for CubeSats on LEO orbits (2019)
+    \item Stochastic weight matrix-based regularization methods for deep neural networks (2018)
+    \item Development of a 3D input device for virtual working environments (2017)
+\end{itemize}}  
+\cventry{2018}{Nokia Bell Labs Scholarship for Deep Learning Research}{Nokie Bell Labs Hungary}{}{}{}
+\cventry{2016,2018}{New National Excellence Program Research Grant}{Ministry of Innovation and Technology Hungary}{top 0.3\%}{}{}
+\cventry{2016--2018,2020}{National Higher Education Scholarship}{Republic of Hungary}{top 0.8\%}{}{}{}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Publications
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\nocite{*}
+\bibliographystyle{unsrt}
+\bibliography{publications}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Talks}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cventry{2022.12.}{Multivariable Causal Discovery for General Nonlinear Functions}{Learning on Graphs Cambridge Meetup}{Cambridge, UK}{}{}
+\cventry{2022.10.}{Embrace the Gap: VAEs Perform Independent Mechanism Analysis}{Univeristy of Warsaw Machine Learning Seminar}{online}{}{}
+\cventry{2022.08.}{Multivariable Causal Discovery for General Nonlinear Functions}{UAI 2022 Workshop on Causal Representation Learning}{Eindhoven, Netherlands}{}{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Teaching}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cventry{Fall 2020/21}{Teaching Assistant}{Budapest University of Technology and Economics}{Budapest, Hungary}{}{ Image Processing Laboratory I., Computer Vision Systems, Deep Learning in Visual Computing}
+\cventry{Fall 2017/18}{Teaching Assistant}{Budapest University of Technology and Economics}{Budapest, Hungary}{}{Digital Design I. laboratory}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Extracurriculars \& Coursework}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cventry{2022.07.}{ELLIS Cambridge Unit Machine Learning Summer School}{ELLIS Cambridge Unit}{Cambridge, UK}{}{}
+\cventry{2022.07.}{Machine Learning Summer School}{ML in PL}{Krakow, Poland}{}{}
+\cventry{2021.04.}{A Young Leader’s Guide to Risk}{McChrystal Group}{Budapest, Hungary}{}{}
+\cventry{2020.09.}{Ladybird Guide to Spacecraft Operations Workshop}{European Space Agency}{online}{}{}
+\cventry{2020.07.}{Eastern European Machine Learning Summer School}{ML in PL}{online}{}{}
+\cventry{2019.07.}{International Summer School on Deep Learning}{IRDTA}{Warsaw, Poland}{}{}
+\cventry{2019.01.}{Concurrent Design Workshop}{European Space Agency}{ESEC-Galaxia, Redu, Belgium}{}{}
+\cventry{2018--2020}{Leadership Academy}{Mathias Corvinus Collegium}{Budapest, Hungary}{}{}
+\cventry{2018.11.}{Traction Europe Case Studies for Outstanding Engineering Students}{Boston Consulting Group}{Paris, France}{}{}
+\cventry{2016--2018}{Business and Economics Specialization}{Mathias Corvinus Collegium}{Budapest, Hungary}{}{}
+\cventry{2015--2016}{University Junior Program}{Mathias Corvinus Collegium}{Budapest, Hungary}{}{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Competencies}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvitem{Programming Languages}{Python, C, C++}
+\cvitem{Machine Learning}{PyTorch, PyTorch Lightning, Weights and Biases}
+\cvitem{Research}{LaTeX, Zotero}
+\cvitem{Software}{Singularity, Git, CI}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Outreach}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cventry{2020--ongoing}{Coordinator}{Machine Learning Journal Club for Hungarian Students}{}{}{}
+\cventry{2020}{Program Comittee Member}{6th International Conference on Machine Learning, Optimization, and Data Science}{}{}{}
+\cventry{2020}{Reviewer}{Infocommunications journal}{}{}{}
+\cventry{2016}{E-learning Developer}{EduBase}{}{}{Video series for Digital Design I. univeristy course}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Languages}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cvitem{English}{Proficient}
+\cvitem{German}{Proficient}
+\cvitem{Hungarian}{Native}
+
+
+
+
+
+
+\vspace{40pt}
+Tübingen, \today
+
+
+
+\end{document}
+
