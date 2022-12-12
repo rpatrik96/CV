@@ -33,3 +33,10 @@ jobs:
         with:
           name: cv.log
           path: ./cv.log
+      - name: move
+        run: mkdir -p github_artifacts && mv ./cv.pdf ./github_artifacts/
+      - name: Upload pdf as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: cv.pdf
+          path: ./github_artifacts
