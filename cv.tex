@@ -26,6 +26,8 @@
 
 \documentclass[11pt,a4paper,roman]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
 
+\input{commands.tex}
+
 % font loading
 % for luatex and xetex, do not use inputenc and fontenc
 % see https://tex.stackexchange.com/a/496643
@@ -96,7 +98,7 @@
 
 
 \extrainfo{
-\href{mailto:rpatrik1996@gmail.com}{\raisebox{-0.05\height}{\color{customblue}\faEnvelope} \ rpatrik1996@gmail.com} \\
+\href{mailto:patrik.reizinger@uni-tuebingen.de}{\raisebox{-0.05\height}{\color{customblue}\faEnvelope} \ patrik.reizinger@uni-tuebingen.de} \\
 \href{tel:+36306137236}{\raisebox{-0.05\height}{\color{customblue}\faMobile} \ +36-30-613-7236} \\
 \href{https://github.com/rpatrik96}{\raisebox{-0.05\height}{\color{customblue}\faGithub}\ rpatrik96}\\ 
 \href{https://linkedin.com/in/patrik-reizinger}{\raisebox{-0.05\height}{\color{customblue}\faLinkedin}\ patrik-reizinger}\\
@@ -143,11 +145,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cventry{2020.02--2021.01.}{Deep Learning Student Researcher}{Budapest University of Technology and Economics}{Budapest, Hungary}{}{Analyzed time series data  with deep learning}
-\cventry{2019.02--2021.02.}{Control Engineering Intern}{C3S Electronics Development LLC}{Budapest, Hungary}{}{DEveloped and designed a CubeSat attitude determination and control system}
-\cventry{2019.01--02.}{FPGA Developer Intern}{Karlsruhe Institute of Technology}{Karlsruhe, Germany}{}{FPGA time synchronisation}
-\cventry{2018.06--08.}{Image Processing Intern}{Fraunhofer Institute for Factory Operation and Automation IFF}{Magdeburg, Germany}{}{Developed an automated visual inspection tool in C++}
-\cventry{2017.06--08.}{Data Scientist Intern}{Gravity R\&D}{Budapest, Hungary}{Analyzed customer data analysis in Python}{}
-\cventry{2016.09--2019.01.}{Virtual Reality Peripheral Device Developer}{Budapest University of Technology and Economics}{Budapest, Hungary}{}{Developed a 3D input device for virtual working environments}
+\cventry{2019.02--2021.02.}{Control Engineering Intern}{C3S Electronics Development LLC}{Budapest, Hungary}{}{Developed and designed a CubeSat attitude determination and control system}
+\cventry{2019.01--02.}{FPGA Developer Intern}{Karlsruhe Institute of Technology}{Karlsruhe, Germany}{}{Implemented FPGA time synchronisation with a Python interface}
+\cventry{2018.06--08.}{Image Processing Intern}{Fraunhofer Institute for Factory Operation and Automation IFF}{Magdeburg, Germany}{}{Developed an automated visual inspection tool in C++, including a Python wrapper}
+\cventry{2017.06--08.}{Data Scientist Intern}{Gravity R\&D}{Budapest, Hungary}{Analyzed customer data in Python with machine learning}{}
+\cventry{2016.09--2019.01.}{Virtual Reality Peripheral Device Developer}{Budapest University of Technology and Economics}{Budapest, Hungary}{}{Developed the hardware and software for a 3D input device for virtual working environments}
 
 
 
@@ -155,10 +157,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Honors and Awards}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cventry{2023}{Qualcomm Innovation Fellowship Europe}{Qualcomm}{Finalist}{}{}{}
 \cventry{2022}{NeurIPS Scholar Award}{}{}{}{}{}
 \cventry{2021}{Pro Scientia Gold Medal}{National Scientific Students’ Association Hungary}{top 0.03\%}{}{}{}{}
 \cventry{2021}{Hope Badge Special Award to The Most Promising Young Scientist}{Pro Scientia Gold Medalists' Association}{top 0.003\%}{}{}{}{}
-\cventry{2019,2021}{$\mathbf{1^{\mathrm{st}}}$ Prize at National Scientific Students’ Association Conference}{National Scientific Students’ Association Hungary}{top 0.3\%}{}{\begin{itemize}
+\cventry{2019, 2021}{$\mathbf{1^{\mathrm{st}}}$ Prize at National Scientific Students’ Association Conference}{National Scientific Students’ Association Hungary}{top 0.3\%}{}{\begin{itemize}
     \item Attention-based curiosity in multi-agent reinforcement learning environments (2021)
     \item Stochastic weight matrix-based regularization methods for deep neural networks (2019)
     \item Development of a 3D input device for virtual working environments (2019)
@@ -185,6 +188,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Talks}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cventry{2023.02.}{Popper meets machine learning - How falsificationism can guide the design of AI solutions}{Darwin College}{Cambridge, UK}{}{}
+\cventry{2023.01.}{Multivariable Causal Discovery for General Nonlinear Functions}{AstraZeneca Seminar}{online}{}{}
 \cventry{2022.12.}{Multivariable Causal Discovery for General Nonlinear Functions}{Learning on Graphs Cambridge Meetup}{Cambridge, UK}{}{}
 \cventry{2022.10.}{Embrace the Gap: VAEs Perform Independent Mechanism Analysis}{Univeristy of Warsaw Machine Learning Seminar}{online}{}{}
 \cventry{2022.08.}{Multivariable Causal Discovery for General Nonlinear Functions}{UAI 2022 Workshop on Causal Representation Learning}{Eindhoven, Netherlands}{}{}
