@@ -71,6 +71,21 @@
   \StrSubstitute{#2}{Patrik Reizinger}{{\color{customblue}{\textbf{Patrik Reizinger}}}}\par}
 
 
+
+\usepackage{etoolbox}
+\usepackage{ifthen}
+
+\newtoggle{en}
+\newcommand{\en}[2]{\iftoggle{en}{#1}{#2}}
+
+\toggletrue{en}
+
+\iftoggle{en}{}{\renewcommand\refname{Publikációk}}
+
+\newdateformat{hundate}{\THEYEAR.\twodigit{\THEMONTH}.\twodigit{\THEDAY}.}
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	FONT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -89,8 +104,8 @@
 %	NAME AND CONTACT INFORMATION SECTION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\firstname{Patrik} % Your first name
-\familyname{Reizinger} % Your last name
+\firstname{\en{Patrik}{Reizinger}} % Your first name
+\familyname{\en{Reizinger}{Patrik}} % Your last name
 
 % All information in this block is optional, comment out any lines you don't need
 % \title{Curriculum Vitae}
@@ -98,14 +113,16 @@
 
 
 \extrainfo{
-\href{mailto:patrik.reizinger@uni-tuebingen.de}{\raisebox{-0.05\height}{\color{customblue}\faEnvelope} \ patrik.reizinger@uni-tuebingen.de} \\
+\href{mailto:patrik.reizinger@tuebingen.mpg.de}{\raisebox{-0.05\height}{\color{customblue}\faEnvelope} \ patrik.reizinger@tuebingen.mpg.de} \\
 \href{tel:+36306137236}{\raisebox{-0.05\height}{\color{customblue}\faMobile} \ +36-30-613-7236} \\
 \href{https://github.com/rpatrik96}{\raisebox{-0.05\height}{\color{customblue}\faGithub}\ rpatrik96}\\ 
 \href{https://linkedin.com/in/patrik-reizinger}{\raisebox{-0.05\height}{\color{customblue}\faLinkedin}\ patrik-reizinger}\\
 \href{https://rpatrik96.github.io}{\raisebox{-0.05\height}{\color{customblue}\faGlobe} \ rpatrik96.github.io} 
 }
 
+% \photo{rp_small.jpeg}
 
+\include{hyphenation_rules}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -115,8 +132,14 @@
 
 
 
+
+
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Education}
+\section{\en{Education}{Tanulmányok}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -125,57 +148,61 @@
 % {localization}{optional: grade/...}
 % {optional: comment/job description}
 
-\cventry{2021--ongoing}{Machine Learning Ph.D.}{International Max Planck Research School for Intelligent Systems/University of Tübingen/ELLIS}{Tübingen, Germany}{}{\textbf{Thesis:} Causal Representation Learning\\ \textbf{Supervisors:} Wieland Brendel, Ferenc Huszár, Matthias Bethge, Bernhard Schölkopf\\
-\textbf{ELLIS exchange at the University of Cambridge:} 2022.10--2023.03.}
+\cventry{2021--\en{ongoing}{jelenleg}}{Machine Learning Ph.D.}{International Max Planck Research School for Intelligent Systems/University of Tübingen/ELLIS}{Tübingen, \en{Germany}{Németország}}{}{\textbf{\en{Thesis}{Tézis}:} Causal Representation Learning\\ \textbf{\en{Supervisors}{Témavezetők}:} Wieland Brendel, \en{Ferenc Huszár}{Huszár Ferenc}, Matthias Bethge, Bernhard Schölkopf\\
+\textbf{ELLIS \en{exchange at the}{csereprogram,} University of Cambridge:} 2022.10--2023.03.}
 
-\cventry{2019--2021}{Electrical Engineering M.Sc.}{Budapest University of Technology and Economics}{Budapest, Hungary}{GPA~5.0/5.0 (valedictorian)}{\textbf{Thesis:} Development of an Attitude Determination and Control System for CubeSats on LEO orbits\\
-\textbf{Supervisors:} Ferenc Vajda, Márton Szemenyei\\
-\textbf{Extracurricular:} iMSc program for talented students}
+\cventry{2019--2021}{\en{Electrical Engineering M.Sc.}{Villamosmérnök M.Sc.}}{\en{Budapest University of Technology and Economics}{Budapesti Műszaki és Gazdaságtudományi Egyetem}}{Budapest, \en{Hungary}{Magyarország}}{GPA~5.0/5.0 (\en{valedictorian}{évfolyamelső})}{\textbf{\en{Thesis}{Diplomamunka}:} \en{Development of an Attitude Determination and Control System for CubeSats on LEO orbits}{Orientációmeghatározó és -szabályozó alrendszer fejlesztése LEO pályán működő kisműholdakhoz}\\
+\textbf{\en{Supervisors}{Témavezetők}:} \en{Ferenc Vajda}{Vajda Ferenc}, \en{Márton Szemenyei}{Szemenyei Márton}\\
+\textbf{\en{Extracurricular}{Kiegészítő programok}:} iMSc \en{}{tehetséggondozó} program \en{for talented students}{}}
 
-\cventry{2015--2019}{Electrical Engineering B.Sc.}{Budapest University of Technology and Economics}{Budapest, Hungary}{GPA~5.0/5.0 (valedictorian)}{\textbf{Thesis:} Development of a 3D input device for virtual working environments\\
-\textbf{Supervisors:} Ferenc Vajda, Márton Szemenyei\\
-\textbf{Extracurricular:} German language program in cooperation with the Karlsruhe Institute of Technology\\
-\textbf{Exchange semester at the Karlsruhe Institute of Technology:} 2018.10--2019.02.}
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Experience}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\cventry{2020.02--2021.01.}{Deep Learning Student Researcher}{Budapest University of Technology and Economics}{Budapest, Hungary}{}{Analyzed time series data  with deep learning}
-\cventry{2019.02--2021.02.}{Control Engineering Intern}{C3S Electronics Development LLC}{Budapest, Hungary}{}{Developed and designed a CubeSat attitude determination and control system}
-\cventry{2019.01--02.}{FPGA Developer Intern}{Karlsruhe Institute of Technology}{Karlsruhe, Germany}{}{Implemented FPGA time synchronisation with a Python interface}
-\cventry{2018.06--08.}{Image Processing Intern}{Fraunhofer Institute for Factory Operation and Automation IFF}{Magdeburg, Germany}{}{Developed an automated visual inspection tool in C++, including a Python wrapper}
-\cventry{2017.06--08.}{Data Scientist Intern}{Gravity R\&D}{Budapest, Hungary}{Analyzed customer data in Python with machine learning}{}
-\cventry{2016.09--2019.01.}{Virtual Reality Peripheral Device Developer}{Budapest University of Technology and Economics}{Budapest, Hungary}{}{Developed the hardware and software for a 3D input device for virtual working environments}
+\cventry{2015--2019}{\en{Electrical Engineering B.Sc.}{Villamosmérnök M.Sc.}}{\en{Budapest University of Technology and Economics}{Budapesti Műszaki és Gazdaságtudományi Egyetem}}{Budapest, \en{Hungary}{Magyarország}}{GPA~5.0/5.0 (\en{valedictorian}{évfolyamelső})}{\textbf{\en{Thesis}{Diplomamunka}:} \en{Development of a 3D input device for virtual working environments}{Periféria fejlesztése virtuális munkakörnyezetekhez}\\
+\textbf{\en{Supervisors}{Témavezetők}:} \en{Ferenc Vajda}{Vajda Ferenc}, \en{Márton Szemenyei}{Szemenyei Márton}\\
+\textbf{\en{Extracurricular}{Kiegészítő programok}:} \en{German language program in cooperation with the}{Német nyelvű mérnökképzés} Karlsruhe Institute of Technology\\
+\textbf{\en{Exchange semester at the}{ERASMUS félév,} Karlsruhe Institute of Technology:} 2018.10--2019.02.}
 
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Honors and Awards}
+\section{\en{Experience}{Munkatapasztalat}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\cventry{2023}{$\mathbf{4^{\mathrm{th}}}$ Place at German University Rowing Championship}{German Rowing Association}{Coxed Men's Quad $500\ \mathrm{m}$}{}{}{}
-\cventry{2023}{Qualcomm Innovation Fellowship Europe}{Qualcomm}{Finalist}{}{}{}
+
+\cventry{2020.02--2021.01.}{Deep Learning Student Researcher}{\en{Budapest University of Technology and Economics}{Budapesti Műszaki és Gazdaságtudományi Egyetem}}{Budapest, \en{Hungary}{Magyarország}}{}{\en{Analyzed time series data with deep learning}{Idősoros adatok elemzése deep learning módszerekkel}}
+\cventry{2019.02--2021.02.}{Control Engineering Intern}{C3S Electronics Development LLC}{Budapest, \en{Hungary}{Magyarország}}{}{\en{Developed and designed a CubeSat attitude determination and control system}{Orientációmeghatározó és -szabályozó alrendszer fejlesztése LEO pályán működő kisműholdakhoz}}
+\cventry{2019.01--02.}{FPGA Developer Intern}{Karlsruhe Institute of Technology}{Karlsruhe, Germany}{}{\en{Implemented FPGA time synchronisation with a Python interface}{FPGA időszinkronizáció implementálása Python interfésszel}}
+\cventry{2018.06--08.}{Image Processing Intern}{Fraunhofer Institute for Factory Operation and Automation IFF}{Magdeburg, Germany}{}{\en{Developed an automated visual inspection tool in C++, including a Python wrapper}{Automatizált vizuális inspekciós szokftver fejlesztése C++-ban Pyhton interfésszel}}
+\cventry{2017.06--08.}{Data Scientist Intern}{Gravity R\&D}{Budapest, \en{Hungary}{Magyarország}}{}{\en{Analyzed customer data in Python with machine learning}{Vásárlói adatok elemzése machine learning módszerekkel}}{}
+\cventry{2016.09--2019.01.}{Virtual Reality Peripheral Device Developer}{\en{Budapest University of Technology and Economics}{Budapesti Műszaki és Gazdaságtudományi Egyetem}}{Budapest, \en{Hungary}{Magyarország}}{}{\en{Developed the hardware and software for a 3D input device for virtual working environments}{Hardver- és szoftverfejlesztés virtuális munkakörnyezetekben alkalmazható háromdimenziós beviteli eszközhöz}}
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\en{Honors and Awards}{Díjak és Kitüntetések}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cventry{2023}{\en{$\mathbf{4^{\mathrm{th}}}$ Place at German University Rowing Championship}{ $\mathbf{4.}$ helyezés a Német Egyetemi Evezős Bajnokságban}}{\en{German Rowing Association}{Deutscher Ruderverband}}{\en{Coxed Men's Quad}{Kormányzott négypárevezős} $500\ \mathrm{m}$}{}{}{}
+\cventry{2023}{Qualcomm Innovation Fellowship Europe}{Qualcomm}{\en{Finalist}{Döntő}}{}{}{}
 \cventry{2022}{NeurIPS Scholar Award}{}{}{}{}{}
-\cventry{2021}{Pro Scientia Gold Medal}{National Scientific Students’ Association Hungary}{top 0.03\%}{}{}{}{}
-\cventry{2021}{Hope Badge Special Award to The Most Promising Young Scientist}{Pro Scientia Gold Medalists' Association}{top 0.003\%}{}{}{}{}
-\cventry{2019, 2021}{$\mathbf{1^{\mathrm{st}}}$ Prize at National Scientific Students’ Association Conference}{National Scientific Students’ Association Hungary}{top 0.3\%}{}{\begin{itemize}
+\cventry{2021}{Pro Scientia \en{Gold Medal}{Aranyérem}}{\en{National Scientific Students’ Association Hungary}{Országos Tudományos Diákköri Tanács}}{top 0.03\%}{}{}{}{}
+\cventry{2021}{\en{Hope Badge Special Award to The Most Promising Young Scientist}{Reménység Kitűző Különdíj}}{Pro Scientia \en{Gold Medalists' Association}{Aranyérmesek Társasága}}{top 0.003\%}{}{}{}{}
+\cventry{2019, 2021}{\en{$\mathbf{1^{\mathrm{st}}}$ Prize at National Scientific Students’ Association Conference}{$\mathbf{1.}$ helyezés az Országos Tudományos Diákköri Konferencián}}{\en{National Scientific Students’ Association Hungary}{Országos Tudományos Diákköri Tanács}}{top 0.3\%}{}{\begin{itemize}
     \item Attention-based curiosity in multi-agent reinforcement learning environments (2021)
     \item Stochastic weight matrix-based regularization methods for deep neural networks (2019)
     \item Development of a 3D input device for virtual working environments (2019)
 \end{itemize}}
-\cventry{2017--2019}{$\mathbf{1^{\mathrm{st}}}$ Prize at Scientific Students’ Association Conference}{Budapest University of Technology and Economics}{top 0.3\%}{}{\begin{itemize}
+\cventry{2017--2019}{\en{$\mathbf{1^{\mathrm{st}}}$ Prize at Scientific Students’ Association Conference}{{$\mathbf{1.}$ helyezés a Tudományos Diákköri Konferencián}}}{\en{Budapest University of Technology and Economics}{Budapesti Műszaki és Gazdaságtudományi Egyetem}}{top 0.3\%}{}{\begin{itemize}
     \item Attention-based curiosity in multi-agent reinforcement learning environments (2019)
     \item Development of an Attitude Determination and Control System for CubeSats on LEO orbits (2019)
     \item Stochastic weight matrix-based regularization methods for deep neural networks (2018)
     \item Development of a 3D input device for virtual working environments (2017)
 \end{itemize}}  
-\cventry{2018}{Nokia Bell Labs Scholarship for Deep Learning Research}{Nokia Bell Labs Hungary}{}{}{}
-\cventry{2016,2018}{New National Excellence Program Research Grant}{Ministry of Innovation and Technology Hungary}{top 0.3\%}{}{}
-\cventry{2016--2018,2020}{National Higher Education Scholarship}{Republic of Hungary}{top 0.8\%}{}{}{}
+\cventry{2018}{Nokia Bell Labs Scholarship for Deep Learning Research}{Nokia Bell Labs \en{Hungary}{Magyarország}}{}{}{}
+\cventry{2016,2018}{\en{New National Excellence Program Research Grant}{Új Nemzeti Kiválóság Program Kutatási Ösztöndíj}}{\en{Ministry of Innovation and Technology Hungary}{Innovációs és Technológiai Minisztérium}}{top 0.3\%}{}{}
+\cventry{2016--2018,2020}{\en{National Higher Education Scholarship}{Nemzeti Felsőoktatási Ösztöndíj}}{\en{Republic of Hungary}{Innovációs és Technológiai Minisztérium}}{top 0.8\%}{}{}{}
 
 
 
@@ -187,39 +214,39 @@
 \bibliography{publications}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Talks}
+\section{\en{Talks}{Előadások}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cventry{2023.02.}{Popper meets machine learning - How falsificationism can guide the design of AI solutions}{Darwin College}{Cambridge, UK}{}{}
 \cventry{2023.01.}{Multivariable Causal Discovery for General Nonlinear Functions}{AstraZeneca Seminar}{online}{}{}
 \cventry{2022.12.}{Multivariable Causal Discovery for General Nonlinear Functions}{Learning on Graphs Cambridge Meetup}{Cambridge, UK}{}{}
 \cventry{2022.10.}{Embrace the Gap: VAEs Perform Independent Mechanism Analysis}{Univeristy of Warsaw Machine Learning Seminar}{online}{}{}
-\cventry{2022.08.}{Multivariable Causal Discovery for General Nonlinear Functions}{UAI 2022 Workshop on Causal Representation Learning}{Eindhoven, Netherlands}{}{}
+\cventry{2022.08.}{Multivariable Causal Discovery for General Nonlinear Functions}{UAI 2022 Workshop on Causal Representation Learning}{Eindhoven, \en{Netherlands}{Hollandia}}{}{}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Teaching}
+\section{\en{Teaching}{Oktatás}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\cventry{Fall 2020/21}{Teaching Assistant}{Budapest University of Technology and Economics}{Budapest, Hungary}{}{ Image Processing Laboratory I., Computer Vision Systems, Deep Learning in Visual Computing}
-\cventry{Fall 2017/18}{Teaching Assistant}{Budapest University of Technology and Economics}{Budapest, Hungary}{}{Digital Design I. laboratory}
+\cventry{\en{Fall}{} 2020/21\en{}{/1}}{\en{Teaching Assistant}{Demonstrátor}}{\en{Budapest University of Technology and Economics}{Budapesti Műszaki és Gazdaságtudományi Egyetem}}{Budapest, \en{Hungary}{Magyarország}}{}{ \en{Image Processing Laboratory}{Képfeldolgozás Laboratórium} I., \en{Computer Vision Systems}{Számítógépes Látórendszerek}, Deep Learning \en{in Visual Computing}{Alkalmazása a Vizuális Informatikában}}
+\cventry{\en{Fall}{} 2017/18\en{}{/1}}{\en{Teaching Assistant}{Demonstrátor}}{\en{Budapest University of Technology and Economics}{Budapesti Műszaki és Gazdaságtudományi Egyetem}}{Budapest, \en{Hungary}{Magyarország}}{}{\en{Digital Design}{Digitális Technika} I. \en{laboratory}{labor}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Extracurriculars \& Coursework}
+\section{\en{Extracurriculars \& Coursework}{Kiegészítő Tanulmányok}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cventry{2022.07.}{ELLIS Cambridge Unit Machine Learning Summer School}{ELLIS Cambridge Unit}{Cambridge, UK}{}{}
-\cventry{2022.07.}{Machine Learning Summer School}{ML in PL}{Krakow, Poland}{}{}
-\cventry{2021.04.}{A Young Leader’s Guide to Risk}{McChrystal Group}{Budapest, Hungary}{}{}
+\cventry{2022.07.}{Machine Learning Summer School}{ML in PL}{\en{Krakow}{Krakkó}, \en{Poland}{Lengyelország}}{}{}
+\cventry{2021.04.}{A Young Leader’s Guide to Risk}{McChrystal Group}{Budapest, \en{Hungary}{Magyarország}}{}{}
 \cventry{2020.09.}{Ladybird Guide to Spacecraft Operations Workshop}{European Space Agency}{online}{}{}
 \cventry{2020.07.}{Eastern European Machine Learning Summer School}{ML in PL}{online}{}{}
-\cventry{2019.07.}{International Summer School on Deep Learning}{IRDTA}{Warsaw, Poland}{}{}
+\cventry{2019.07.}{International Summer School on Deep Learning}{IRDTA}{\en{Warsaw}{Varsó}, \en{Poland}{Lengyelország}}{}{}
 \cventry{2019.01.}{Concurrent Design Workshop}{European Space Agency}{ESEC-Galaxia, Redu, Belgium}{}{}
-\cventry{2018--2020}{Leadership Academy}{Mathias Corvinus Collegium}{Budapest, Hungary}{}{}
-\cventry{2018.11.}{Traction Europe Case Studies for Outstanding Engineering Students}{Boston Consulting Group}{Paris, France}{}{}
-\cventry{2016--2018}{Business and Economics Specialization}{Mathias Corvinus Collegium}{Budapest, Hungary}{}{}
-\cventry{2015--2016}{University Junior Program}{Mathias Corvinus Collegium}{Budapest, Hungary}{}{}
+\cventry{2018--2020}{Leadership Academy}{Mathias Corvinus Collegium}{Budapest, \en{Hungary}{Magyarország}}{}{}
+\cventry{2018.11.}{Traction Europe Case Studies for Outstanding Engineering Students}{Boston Consulting Group}{\en{Paris}{Párizs}, \en{France}{Franciaország}}{}{}
+\cventry{2016--2018}{\en{Business and Economics Specialization}{Közgazdaságtan és Business Szakirány}}{Mathias Corvinus Collegium}{Budapest, \en{Hungary}{Magyarország}}{}{}
+\cventry{2015--2016}{\en{University Junior Program}{Egyetmi Program Juniorképzés}}{Mathias Corvinus Collegium}{Budapest, \en{Hungary}{Magyarország}}{}{}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Competencies}
+\section{\en{Competencies}{Kompetenciák}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \cvskillhead[-0.1em][Level][Skill][Years][]%
 % \cvskillentry*{Programming}{5}{Python}{5}
@@ -228,7 +255,7 @@
 % \cvskillentry*{OS:}{3}{Linux}{2}
 % % \cvskillentry*[1em]{Methods}{4}{SCRUM}{8}
 
-\cvitem{Programming Languages}{\begin{itemize}
+\cvitem{\en{Programming Languages}{Programozási Nyelvek}}{\begin{itemize}
     \item[] \cvskill{5} Python
     \item[] \cvskill{3} C++
     \item[] \cvskill{3} C
@@ -242,7 +269,7 @@
 \end{itemize}
 }
 
-\cvitem{Research}{\begin{itemize}
+\cvitem{\en{Research}{Kutatás}}{\begin{itemize}
 \item[] \cvskill{5} Zotero
 \item[] \cvskill{4} \LaTeX
 \end{itemize}
@@ -257,20 +284,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Outreach}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\cventry{2020--2022}{Coordinator}{Machine Learning Journal Club for Hungarian Students}{}{}{}
+\cventry{2020--2022}{\en{Coordinator}{Koordinátor}}{\en{}{Magyar} Machine Learning Journal Club \en{for Hungarian Students}{}}{}{}{}
 \cventry{2020}{Program Comittee Member}{6th International Conference on Machine Learning, Optimization, and Data Science}{}{}{}
-\cventry{2020}{Reviewer}{Infocommunications journal}{}{}{}
-\cventry{2016}{E-learning Developer}{EduBase}{}{}{Video series for Digital Design I. univeristy course}
+\cventry{2020}{\en{Reviewer}{Bíráló}}{Infocommunications Journal}{}{}{}
+\cventry{2016}{E-learning Developer}{EduBase}{}{}{\en{Video series for Digital Design I. univeristy course}{Videósorozat készítése a Digitális Technika I. egyetemi kurzushoz}}
 
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Languages}
+\section{\en{Languages}{Nyelvismeret}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\cvitem{English}{Proficient}
-\cvitem{German}{Proficient}
-\cvitem{Hungarian}{Native}
+\cvitem{\en{English}{Angol}}{\en{Proficient}{C1}}
+\cvitem{\en{German}{Német}}{\en{Proficient}{C1}}
+\cvitem{\en{Hungarian}{Magyar}}{\en{Native}{Anyanyelv}}
 
 
 
@@ -278,7 +305,7 @@
 
 \vfill
 % \vspace{40pt}
-Tübingen, \today
+Tübingen, \en{\today}{\hundate\today}
 
 
 
