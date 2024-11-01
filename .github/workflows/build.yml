@@ -16,7 +16,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Build pdf
         run: latexmk -pdflua ./cv.tex
@@ -54,7 +54,7 @@ jobs:
           path: github_artifacts
           merge-multiple: true
       - name: move
-        run: mkdir -p github_deploy && mv github_artifacts/*/* github_deploy
+        run: mkdir -p github_deploy && mv ./github_artifacts/*/* github_deploy
       - name: deploy on orphan branch
         uses: peaceiris/actions-gh-pages@v4
         with:
