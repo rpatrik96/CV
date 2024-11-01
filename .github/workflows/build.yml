@@ -22,7 +22,7 @@ jobs:
         run: latexmk -pdflua ./cv.tex
 
       - name: Upload pdf
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: cv.pdf
           path: ./cv.pdf
@@ -36,7 +36,7 @@ jobs:
       - name: move
         run: mkdir -p github_artifacts && mv ./cv.pdf ./github_artifacts/
       - name: Upload pdf as artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: cv.pdf
           path: ./github_artifacts
