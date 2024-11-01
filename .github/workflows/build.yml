@@ -26,7 +26,7 @@ jobs:
         with:
           name: cv.pdf
           path: ./cv.pdf
-          merge-multiple: true
+          overwrite: true
 
       - name: Upload log
         if: ${{ always() }}
@@ -34,7 +34,7 @@ jobs:
         with:
           name: cv.log
           path: ./cv.log
-          merge-multiple: true
+          
       - name: move
         run: mkdir -p github_artifacts && mv ./cv.pdf ./github_artifacts/
       - name: Upload pdf as artifact
@@ -42,7 +42,7 @@ jobs:
         with:
           name: cv.pdf
           path: ./github_artifacts
-          merge-multiple: true
+          overwrite: true
   deploy:
     needs: [build-template]
     runs-on: ubuntu-latest
