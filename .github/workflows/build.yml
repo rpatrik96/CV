@@ -53,11 +53,8 @@ jobs:
         with:
           path: github_artifacts
           merge-multiple: true
-      - name: move
-        run: mkdir -p github_deploy && mv /home/runner/work/CV/CV/github_artifacts github_deploy
       - name: deploy on orphan branch
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./github_artifacts
-          publish_branch: build
