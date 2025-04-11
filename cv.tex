@@ -60,6 +60,37 @@
 %\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
 %\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
 
+\usepackage[
+  backend=biber,
+  style=numeric,
+  sorting=none,
+url=false,
+maxnames=99
+]{biblatex}
+\addbibresource{publications.bib}
+
+
+
+\usepackage{xcolor}
+\usepackage{etoolbox}
+
+
+% \newcommand{\highlightname}{\textbf{\textcolor{blue}{Patrik Reizinger}}}
+
+% \DeclareNameFormat{highlightname}{%
+%   \ifboolexpr{
+%     test {\ifstrequal{#1}{Reizinger}} and
+%     test {\ifstrequal{#3}{Patrik}}
+%   }
+%     {\textbf{\textcolor{blue}{#3~#1}}}
+%     {\ifuseprefix
+%        {\mkbibnamelast{#1}\isdot, \mkbibnamefirst{#3}\isdot}
+%        {\mkbibnamelast{#1}\isdot, \mkbibnamefirst{#3}\isdot}}%
+%   \usebibmacro{name:andothers}
+% }
+% \DeclareBibliographyOptions{nameformat=highlightname}
+
+
 
 \usepackage{xstring}
 \usepackage[normalem]{ulem} 
@@ -72,7 +103,7 @@
 
 
 
-\usepackage{etoolbox}
+% \usepackage{etoolbox}
 \usepackage{ifthen}
 
 \newtoggle{en}
@@ -148,7 +179,7 @@
 % {localization}{optional: grade/...}
 % {optional: comment/job description}
 
-\cventry{2021--\en{2025}{jelenleg}}{Machine Learning Ph.D.}{International Max Planck Research School for Intelligent Systems/University of Tübingen/ELLIS}{Tübingen, \en{Germany}{Németország}}{}{\textbf{\en{Thesis}{Tézis}:} Causal Representation Learning\\ \textbf{\en{Supervisors}{Témavezetők}:} Wieland Brendel, \en{Ferenc Huszár}{Huszár Ferenc}, Matthias Bethge, Bernhard Schölkopf\\
+\cventry{2021--\en{2025}{jelenleg}}{Machine Learning Ph.D.}{International Max Planck Research School for Intelligent Systems/University of Tübingen/ELLIS Institute Tübingen}{Tübingen, \en{Germany}{Németország}}{}{\textbf{\en{Thesis}{Tézis}:} Causal Representation Learning\\ \textbf{\en{Supervisors}{Témavezetők}:} Wieland Brendel, \en{Ferenc Huszár}{Huszár Ferenc}, Matthias Bethge, Bernhard Schölkopf\\
 \textbf{ELLIS \en{exchange at the}{csereprogram,} University of Cambridge:} 2022.10--2023.03.}
 
 \cventry{2019--2021}{\en{Electrical Engineering M.Sc.}{Villamosmérnök M.Sc.}}{\en{Budapest University of Technology and Economics}{Budapesti Műszaki és Gazdaságtudományi Egyetem}}{Budapest, \en{Hungary}{Magyarország}}{GPA~5.0/5.0 (\en{valedictorian}{évfolyamelső})}{\textbf{\en{Thesis}{Diplomamunka}:} \en{Development of an Attitude Determination and Control System for CubeSats on LEO orbits}{Orientációmeghatározó és -szabályozó alrendszer fejlesztése LEO pályán működő kisműholdakhoz}\\
@@ -184,8 +215,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\en{Honors and Awards}{Díjak és Kitüntetések}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cventry{2025}{ICLR Scholar Award}{}{}{}{}{}
 \cventry{2023,2024}{Qualcomm Innovation Fellowship Europe}{Qualcomm}{\en{Finalist}{Döntő}}{}{}{}
-\cventry{2023}{\en{$\mathbf{4^{\mathrm{th}}}$ Place at German University Rowing Championship}{ $\mathbf{4.}$ helyezés a Német Egyetemi Evezős Bajnokságban}}{\en{German Rowing Association}{Deutscher Ruderverband}}{\en{Coxed Men's Quad}{Kormányzott négypárevezős} $500\ \mathrm{m}$}{}{}{}
+% \cventry{2023}{\en{$\mathbf{4^{\mathrm{th}}}$ Place at German University Rowing Championship}{ $\mathbf{4.}$ helyezés a Német Egyetemi Evezős Bajnokságban}}{\en{German Rowing Association}{Deutscher Ruderverband}}{\en{Coxed Men's Quad}{Kormányzott négypárevezős} $500\ \mathrm{m}$}{}{}{}
 \cventry{2022}{NeurIPS Scholar Award}{}{}{}{}{}
 \cventry{2021}{Pro Scientia \en{Gold Medal}{Aranyérem}}{\en{National Scientific Students’ Association Hungary}{Országos Tudományos Diákköri Tanács}}{top 0.03\%}{}{}{}{}
 \cventry{2021}{\en{Hope Badge Special Award to The Most Promising Young Scientist}{Reménység Kitűző Különdíj}}{Pro Scientia \en{Gold Medalists' Association}{Aranyérmesek Társasága}}{top 0.003\%}{}{}{}{}
@@ -210,8 +242,12 @@
 % Publications
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \nocite{*}
-\bibliographystyle{unsrt}
-\bibliography{publications}
+% \bibliographystyle{unsrt}
+% \bibliography{publications}
+
+\printbibliography
+
+${}^*$ denotes joint first, ${}^\dagger$ joint senior authorship.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\en{Talks}{Előadások}}
@@ -228,27 +264,7 @@
 \cventry{2022.08.}{Multivariable Causal Discovery for General Nonlinear Functions}{UAI 2022 Workshop on Causal Representation Learning}{Eindhoven, \en{Netherlands}{Hollandia}}{}{}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\en{Teaching}{Oktatás}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\cventry{\en{Fall}{} 2020/21\en{}{/1}}{\en{Teaching Assistant}{Demonstrátor}}{\en{Budapest University of Technology and Economics}{Budapesti Műszaki és Gazdaságtudományi Egyetem}}{Budapest, \en{Hungary}{Magyarország}}{}{ \en{Image Processing Laboratory}{Képfeldolgozás Laboratórium} I., \en{Computer Vision Systems}{Számítógépes Látórendszerek}, Deep Learning \en{in Visual Computing}{Alkalmazása a Vizuális Informatikában}}
-\cventry{\en{Fall}{} 2017/18\en{}{/1}}{\en{Teaching Assistant}{Demonstrátor}}{\en{Budapest University of Technology and Economics}{Budapesti Műszaki és Gazdaságtudományi Egyetem}}{Budapest, \en{Hungary}{Magyarország}}{}{\en{Digital Design}{Digitális Technika} I. \en{laboratory}{labor}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\en{Extracurriculars \& Coursework}{Kiegészítő Tanulmányok}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\cventry{2023.12.}{CI/CD for Machine Learning cerfification}{Weights and Biases}{online}{}{}
-\cventry{2022.07.}{ELLIS Cambridge Unit Machine Learning Summer School}{ELLIS Cambridge Unit}{Cambridge, UK}{}{}
-\cventry{2022.07.}{Machine Learning Summer School}{ML in PL}{\en{Krakow}{Krakkó}, \en{Poland}{Lengyelország}}{}{}
-\cventry{2021.04.}{A Young Leader’s Guide to Risk}{McChrystal Group}{Budapest, \en{Hungary}{Magyarország}}{}{}
-\cventry{2020.09.}{Ladybird Guide to Spacecraft Operations Workshop}{European Space Agency}{online}{}{}
-\cventry{2020.07.}{Eastern European Machine Learning Summer School}{ML in PL}{online}{}{}
-\cventry{2019.07.}{International Summer School on Deep Learning}{IRDTA}{\en{Warsaw}{Varsó}, \en{Poland}{Lengyelország}}{}{}
-\cventry{2019.01.}{Concurrent Design Workshop}{European Space Agency}{ESEC-Galaxia, Redu, Belgium}{}{}
-\cventry{2018--2020}{Leadership Academy}{Mathias Corvinus Collegium}{Budapest, \en{Hungary}{Magyarország}}{}{}
-\cventry{2018.11.}{Traction Europe Case Studies for Outstanding Engineering Students}{Boston Consulting Group}{\en{Paris}{Párizs}, \en{France}{Franciaország}}{}{}
-\cventry{2016--2018}{\en{Business and Economics Specialization}{Közgazdaságtan és Business Szakirány}}{Mathias Corvinus Collegium}{Budapest, \en{Hungary}{Magyarország}}{}{}
-\cventry{2015--2016}{\en{University Junior Program}{Egyetmi Program Juniorképzés}}{Mathias Corvinus Collegium}{Budapest, \en{Hungary}{Magyarország}}{}{}
 
 % \newpage
 
@@ -259,6 +275,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cventry{2024}{Organizer}{CALM: First Workshop on
 Causality and Large Models}{NeurIPS 2024}{}{}
+\cventry{2023,2024}{Organizer}{IMPRS-IS Bootcamp}{International Max Planck Research School for Intelligent Systems}{}{}
+\cventry{2022,2023}{Organizer}{ELLIS Doctoral Symposium}{ELLIS}{}{}
+\cventry{2022--ongoing}{\en{Academic Knowledge Transfer}{}}{\en{The Path to PhD blog}{}}{\href{https://path2phd.substack.com}{path2phd.substack.com}}{}{}
 \cventry{2021--ongoing}{\en{Thesis committee member}{Szakdolgozat Bíráló}}{\en{Budapest University of Technology and Economics}{Budapesti Műszaki és Gazdaságtudományi Egyetem}}{}{}{}
 \cventry{2020--ongoing}{\en{Coordinator}{Koordinátor}}{\en{}{Magyar} Machine Learning Journal Club \en{for Hungarian Students}{}}{}{}{}
 \cventry{2020}{Program Committee Member}{6th International Conference on Machine Learning, Optimization, and Data Science}{}{}{}
@@ -278,8 +297,31 @@ Causality and Large Models}{NeurIPS 2024}{}{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\en{Reviewing}{Bíráló}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\cventry{}{\mdseries ICML 2025 position paper track, ICLR 2025, NeurIPS 2024, CLeaR 2024/2025, NeurIPS 2023/2024 workshops, Infocommunications Journal}{}{}{}{}
+\cventry{}{\mdseries ICML 2025 position paper track, ICLR 2025, NeurIPS 2024/2025, CLeaR 2024/2025, NeurIPS 2023/2024 workshops, Infocommunications Journal}{}{}{}{}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\en{Teaching}{Oktatás}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cventry{\en{Fall}{} 2020/21\en{}{/1}}{\en{Teaching Assistant}{Demonstrátor}}{\en{Budapest University of Technology and Economics}{Budapesti Műszaki és Gazdaságtudományi Egyetem}}{Budapest, \en{Hungary}{Magyarország}}{}{ \en{Image Processing Laboratory}{Képfeldolgozás Laboratórium} I., \en{Computer Vision Systems}{Számítógépes Látórendszerek}, Deep Learning \en{in Visual Computing}{Alkalmazása a Vizuális Informatikában}}
+\cventry{\en{Fall}{} 2017/18\en{}{/1}}{\en{Teaching Assistant}{Demonstrátor}}{\en{Budapest University of Technology and Economics}{Budapesti Műszaki és Gazdaságtudományi Egyetem}}{Budapest, \en{Hungary}{Magyarország}}{}{\en{Digital Design}{Digitális Technika} I. \en{laboratory}{labor}}
+
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\en{Extracurriculars \& Coursework}{Kiegészítő Tanulmányok}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cventry{2023.12.}{CI/CD for Machine Learning cerfification}{Weights and Biases}{online}{}{}
+\cventry{2022.07.}{ELLIS Cambridge Unit Machine Learning Summer School}{ELLIS Cambridge Unit}{Cambridge, UK}{}{}
+\cventry{2022.07.}{Machine Learning Summer School}{ML in PL}{\en{Krakow}{Krakkó}, \en{Poland}{Lengyelország}}{}{}
+\cventry{2021.04.}{A Young Leader’s Guide to Risk}{McChrystal Group}{Budapest, \en{Hungary}{Magyarország}}{}{}
+\cventry{2020.09.}{Ladybird Guide to Spacecraft Operations Workshop}{European Space Agency}{online}{}{}
+\cventry{2020.07.}{Eastern European Machine Learning Summer School}{ML in PL}{online}{}{}
+\cventry{2019.07.}{International Summer School on Deep Learning}{IRDTA}{\en{Warsaw}{Varsó}, \en{Poland}{Lengyelország}}{}{}
+\cventry{2019.01.}{Concurrent Design Workshop}{European Space Agency}{ESEC-Galaxia, Redu, Belgium}{}{}
+\cventry{2018--2020}{Leadership Academy}{Mathias Corvinus Collegium}{Budapest, \en{Hungary}{Magyarország}}{}{}
+\cventry{2018.11.}{Traction Europe Case Studies for Outstanding Engineering Students}{Boston Consulting Group}{\en{Paris}{Párizs}, \en{France}{Franciaország}}{}{}
+\cventry{2016--2018}{\en{Business and Economics Specialization}{Közgazdaságtan és Business Szakirány}}{Mathias Corvinus Collegium}{Budapest, \en{Hungary}{Magyarország}}{}{}
+\cventry{2015--2016}{\en{University Junior Program}{Egyetmi Program Juniorképzés}}{Mathias Corvinus Collegium}{Budapest, \en{Hungary}{Magyarország}}{}{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\en{Competencies}{Kompetenciák}}
@@ -290,6 +332,14 @@ Causality and Large Models}{NeurIPS 2024}{}{}
 % % \cvskillentry{}{3}{\LaTeX}{14}
 % \cvskillentry*{OS:}{3}{Linux}{2}
 % % \cvskillentry*[1em]{Methods}{4}{SCRUM}{8}
+
+\cvitem{Soft skills}{\begin{itemize}
+\item[] \cvskill{5} Scientific writing
+\item[] \cvskill{5} Project management
+\item[] \cvskill{4} Assertive communication
+\item[] \cvskill{4} Storytelling
+\end{itemize}
+}
 
 \cvitem{Machine Learning}{\begin{itemize}
 \item[] \cvskill{5} PyTorch
@@ -319,6 +369,7 @@ Causality and Large Models}{NeurIPS 2024}{}{}
 }
 
 
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\en{Languages}{Nyelvismeret}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
