@@ -133,6 +133,9 @@ maxnames=99
 \titlespacing{\section}{0pt}{10pt}{10pt}
 \titlespacing{\subsection}{0pt}{6pt}{2pt}
 
+% PDF-safe arrow: math \to in body, ASCII -> in bookmarks/metadata
+\newcommand{\too}{\texorpdfstring{$\to$}{->}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	NAME AND CONTACT INFORMATION SECTION
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -211,7 +214,44 @@ Doctoral researcher in causal and self-supervised representation learning (IMPRS
 \textbf{\en{Extracurricular}{Kiegészítő programok}:} \en{German language program in cooperation with the}{Német nyelvű mérnökképzés} Karlsruhe Institute of Technology\\
 \textbf{\en{Exchange semester at the}{ERASMUS félév,} Karlsruhe Institute of Technology:} 2018.10--2019.02.}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\en{Publications}{Publikációk}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\subsection*{Selected}
+
+\begin{itemize}\setlength{\itemsep}{3pt}\setlength{\parskip}{0pt}
+\item[]\textbf{Cross-Entropy Is All You Need To Invert the Data Generating Process.}
+{\color{customblue}\textbf{Patrik Reizinger}}\textsuperscript{*}, A. Bizeul\textsuperscript{*}, A. Juhos\textsuperscript{*}, J. E. Vogt, R. Balestriero, W. Brendel, D. Klindt.
+\emph{ICLR 2025} --- {\color{customblue}\textbf{Oral}} (top 1.8\%).
+
+\item[]\textbf{From Superposition to Sparse Codes: Interpretable Representations in Neural Networks.}
+D. Klindt, C. O'Neill, {\color{customblue}\textbf{Patrik Reizinger}}, H. Maurer, N. Miolane.
+\emph{Nature Machine Intelligence} (accepted, 2026).
+
+\item[]\textbf{Identifiable Exchangeable Mechanisms for Causal Structure and Representation Learning.}
+{\color{customblue}\textbf{Patrik Reizinger}}\textsuperscript{*}, S. Guo\textsuperscript{*}, F. Huszár, B. Schölkopf, W. Brendel.
+\emph{ICLR 2025} --- {\color{customblue}\textbf{Spotlight}}.
+
+\item[]\textbf{Position: An Empirically Grounded Identifiability Theory Will Accelerate Self-Supervised Learning Research} (the \textbf{SITH} programme).
+{\color{customblue}\textbf{Patrik Reizinger}}\textsuperscript{*}, R. Balestriero, D. Klindt, W. Brendel.
+\emph{ICML 2025}.
+
+\item[]\textbf{Position: Understanding LLMs Requires More Than Statistical Generalization.}
+{\color{customblue}\textbf{Patrik Reizinger}}\textsuperscript{*}, S. Ujváry\textsuperscript{*}, A. Mészáros\textsuperscript{*}, A. Kerekes\textsuperscript{*}, W. Brendel, F. Huszár.
+\emph{ICML 2024} --- {\color{customblue}\textbf{Spotlight}} (top 3.5\%).
+
+\item[]\textbf{Rule Extrapolation in Language Modeling: A Study of Compositional Generalization on OOD Prompts.}
+A. Mészáros, S. Ujváry, W. Brendel, {\color{customblue}\textbf{Patrik Reizinger}}\textsuperscript{\dag}, F. Huszár\textsuperscript{\dag}.
+\emph{NeurIPS 2024} --- {\color{customblue}\textbf{Spotlight}}.
+\end{itemize}
+
+\subsection*{Full list}
+
+\nocite{*}
+\printbibliography[heading=none]
+
+\textsuperscript{*} denotes joint first, \textsuperscript{\dag} joint senior authorship.
 
 \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -256,46 +296,6 @@ Doctoral researcher in causal and self-supervised representation learning (IMPRS
 \cventry{2018}{Nokia Bell Labs Scholarship for Deep Learning Research}{Nokia Bell Labs \en{Hungary}{Magyarország}}{Early research scholarship from a globally recognized industrial lab}{}{}
 
 \cventry{2016--2018,2020}{\en{National Higher Education Scholarship}{Nemzeti Felsőoktatási Ösztöndíj}}{\en{Republic of Hungary}{Innovációs és Technológiai Minisztérium}}{top 0.8\%}{Highest national student distinction for academic excellence}{}{}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\en{Publications}{Publikációk}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection*{Selected}
-
-\begin{itemize}\setlength{\itemsep}{3pt}\setlength{\parskip}{0pt}
-\item[]\textbf{Cross-Entropy Is All You Need To Invert the Data Generating Process.}
-{\color{customblue}\textbf{Patrik Reizinger}}\textsuperscript{*}, A. Bizeul\textsuperscript{*}, A. Juhos\textsuperscript{*}, J. E. Vogt, R. Balestriero, W. Brendel, D. Klindt.
-\emph{ICLR 2025} --- {\color{customblue}\textbf{Oral}} (top 1.8\%).
-
-\item[]\textbf{From Superposition to Sparse Codes: Interpretable Representations in Neural Networks.}
-D. Klindt, C. O'Neill, {\color{customblue}\textbf{Patrik Reizinger}}, H. Maurer, N. Miolane.
-\emph{Nature Machine Intelligence} (accepted, 2025).
-
-\item[]\textbf{Identifiable Exchangeable Mechanisms for Causal Structure and Representation Learning.}
-{\color{customblue}\textbf{Patrik Reizinger}}\textsuperscript{*}, S. Guo\textsuperscript{*}, F. Huszár, B. Schölkopf, W. Brendel.
-\emph{ICLR 2025} --- {\color{customblue}\textbf{Spotlight}}.
-
-\item[]\textbf{Position: An Empirically Grounded Identifiability Theory Will Accelerate Self-Supervised Learning Research} (the \textbf{SITH} programme).
-{\color{customblue}\textbf{Patrik Reizinger}}\textsuperscript{*}, R. Balestriero, D. Klindt, W. Brendel.
-\emph{ICML 2025}.
-
-\item[]\textbf{Position: Understanding LLMs Requires More Than Statistical Generalization.}
-{\color{customblue}\textbf{Patrik Reizinger}}\textsuperscript{*}, S. Ujváry\textsuperscript{*}, A. Mészáros\textsuperscript{*}, A. Kerekes\textsuperscript{*}, W. Brendel, F. Huszár.
-\emph{ICML 2024} --- {\color{customblue}\textbf{Spotlight}} (top 3.5\%).
-
-\item[]\textbf{Rule Extrapolation in Language Modeling: A Study of Compositional Generalization on OOD Prompts.}
-A. Mészáros, S. Ujváry, W. Brendel, {\color{customblue}\textbf{Patrik Reizinger}}\textsuperscript{\dag}, F. Huszár\textsuperscript{\dag}.
-\emph{NeurIPS 2024} --- {\color{customblue}\textbf{Spotlight}}.
-\end{itemize}
-
-\subsection*{Full list}
-
-\nocite{*}
-\printbibliography[heading=none]
-
-\textsuperscript{*} denotes joint first, \textsuperscript{\dag} joint senior authorship.
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\en{Grants and Funding}{Ösztöndíjak}}
@@ -356,11 +356,11 @@ Causality and Large Models}{NeurIPS 2024}{}{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \cventry{2024--ongoing}{Simon Hanrath}{M.Sc. at the University of Tübingen}{}{}{}
 \cventry{2025--ongoing}{Hsun-Yu Kuo}{M.Sc. at EPFL}{}{}{}
-\cventry{2025}{Samuel Innes}{B.Sc. at Heidelberg\faArrowRight M.Sc. at the University of Cambridge}{}{}{}
-\cventry{2023--ongoing}{Bálint Mucsányi}{M.Sc.\faArrowRight Ph.D. at the University of Tübingen}{}{}{}
-\cventry{2023--ongoing}{Szilvia Ujváry}{M.Sc.\faArrowRight Ph.D. at the University of Cambridge}{}{}{}
-\cventry{2023--ongoing}{Anna Mészáros}{M.Sc.\faArrowRight Ph.D. at the University of Cambridge}{}{}{}
-\cventry{2022--2025}{Boglárka Ecsedi}{B.Sc. at GeorgiaTech\faArrowRight Ph.D. at the University of Toronto}{}{}{}
+\cventry{2025}{Samuel Innes}{B.Sc. at Heidelberg\too M.Sc. at the University of Cambridge}{}{}{}
+\cventry{2023--ongoing}{Bálint Mucsányi}{M.Sc.\too Ph.D. at the University of Tübingen}{}{}{}
+\cventry{2023--ongoing}{Szilvia Ujváry}{M.Sc.\too Ph.D. at the University of Cambridge}{}{}{}
+\cventry{2023--ongoing}{Anna Mészáros}{M.Sc.\too Ph.D. at the University of Cambridge}{}{}{}
+\cventry{2022--2025}{Boglárka Ecsedi}{B.Sc. at GeorgiaTech\too Ph.D. at the University of Toronto}{}{}{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\en{Teaching}{Oktatás}}
@@ -406,7 +406,7 @@ Causality and Large Models}{NeurIPS 2024}{}{}
 \cvitem{Soft skills}{%
 \textbf{Leadership} (NeurIPS 2024 CALM Workshop; IMPRS-IS Bootcamp; ELLIS Doctoral Symposium);
 \textbf{Scientific writing} (\emph{Path to PhD} newsletter; reviewing for ICML/ICLR/NeurIPS/CLeaR/AISTATS);
-\textbf{Project management} (supervising six students across IMPRS-IS, EPFL, Cambridge, Toronto, Tübingen);
+\textbf{Project management} (leading multi-institution research collaborations across Mila, Vector Institute, IMPRS-IS, and Cambridge);
 \textbf{Assertive communication} (three ICML position papers, each setting an agenda the field has since taken up);
 \textbf{Storytelling} (15+ invited talks since 2022 at Mila, LMU Munich, Waterloo, et al.)
 }
