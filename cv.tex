@@ -37,12 +37,14 @@
   \usepackage{unicode-math}
   \defaultfontfeatures{Ligatures=TeX}
     % fontspec allows you to use TTF/OTF fonts directly
-    \setmainfont{MinionPro}[ 
+    \setmainfont{MinionPro}[
     Extension = .otf,
     BoldFont = *-Bold,
     ItalicFont = *-It,
     UprightFont = *-Regular,
     ]
+    % Route math (incl. $\to$ = U+2192) through Latin Modern Math instead of falling back to text lmr10
+    \setmathfont{Latin Modern Math}
 \else
   \usepackage[T1]{fontenc}
   \usepackage{lmodern}
@@ -350,9 +352,7 @@ Causality and Large Models}{NeurIPS 2024}{}{}
 \cvitem{\en{Open-source tools}{Nyílt forrású eszközök}}{%
 \href{https://github.com/rpatrik96/hallmark}{\textsc{Hallmark}} --- benchmark for citation-hallucination detection in scientific writing\newline
 \href{https://github.com/rpatrik96/bibtexupdater}{\texttt{bibtexupdater}} --- automatic preprint-to-published BibTeX migration and reference validation\newline
-\href{https://github.com/rpatrik96/research-agora}{\emph{Research Agora}} --- an open marketplace for AI-assisted research skills\newline
-\href{https://github.com/rpatrik96/identifiability-guard}{\emph{identifiability-guard}} --- benchmark framework for testing identifiability metrics\newline
-\href{https://github.com/rpatrik96/latex-code-sync}{\texttt{latex-code-sync}} --- keep LaTeX numerical results in sync with the experiments that produced them%
+\href{https://github.com/rpatrik96/research-agora}{\emph{Research Agora}} --- an open marketplace for AI-assisted research skills%
 }
 
 
