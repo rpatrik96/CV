@@ -128,8 +128,10 @@ maxnames=99
 %CV Sections inspired by: 
 %http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\raggedright\color{customblue}}{}{0em}{\titlerule[1pt]}[\vspace{-4.55ex}\rule{\titlewidth}{2.5pt}\vspace{1.75ex}]
+\titleformat{\subsection}{\large\scshape\raggedright\color{customblue}}{}{0em}{}[\vspace{-0.5ex}]
 
 \titlespacing{\section}{0pt}{10pt}{10pt}
+\titlespacing{\subsection}{0pt}{6pt}{2pt}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %	NAME AND CONTACT INFORMATION SECTION
@@ -149,9 +151,11 @@ maxnames=99
 % Date of Birth: 10 Dec 1996 \\
 \href{mailto:patrik.reizinger@tuebingen.mpg.de}{\raisebox{-0.05\height}{\color{customblue}\faEnvelope} \ patrik.reizinger@tuebingen.mpg.de} \\
 \href{tel:+36306137236}{\raisebox{-0.05\height}{\color{customblue}\faMobile} \ +36-30-613-7236} \\
-\href{https://github.com/rpatrik96}{\raisebox{-0.05\height}{\color{customblue}\faGithub}\ rpatrik96}\\ 
+\href{https://orcid.org/0000-0001-9861-0293}{\raisebox{-0.05\height}{\color{customblue}\faIdCard} \ 0000-0001-9861-0293}\\
+\href{https://scholar.google.com/citations?user=zIT0fdIAAAAJ}{\raisebox{-0.05\height}{\color{customblue}\faGraduationCap} \ Google Scholar}\\
+\href{https://github.com/rpatrik96}{\raisebox{-0.05\height}{\color{customblue}\faGithub}\ rpatrik96}\\
 \href{https://linkedin.com/in/patrik-reizinger}{\raisebox{-0.05\height}{\color{customblue}\faLinkedin}\ patrik-reizinger}\\
-\href{https://rpatrik96.github.io}{\raisebox{-0.05\height}{\color{customblue}\faGlobe} \ rpatrik96.github.io} 
+\href{https://rpatrik96.github.io}{\raisebox{-0.05\height}{\color{customblue}\faGlobe} \ rpatrik96.github.io}
 }
 
 
@@ -254,6 +258,46 @@ Doctoral researcher in causal and self-supervised representation learning (IMPRS
 \cventry{2016--2018,2020}{\en{National Higher Education Scholarship}{Nemzeti Felsőoktatási Ösztöndíj}}{\en{Republic of Hungary}{Innovációs és Technológiai Minisztérium}}{top 0.8\%}{Highest national student distinction for academic excellence}{}{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\en{Publications}{Publikációk}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{Selected}
+
+\begin{itemize}\setlength{\itemsep}{3pt}\setlength{\parskip}{0pt}
+\item[]\textbf{Cross-Entropy Is All You Need To Invert the Data Generating Process.}
+{\color{customblue}\textbf{Patrik Reizinger}}${}^*$, A. Bizeul${}^*$, A. Juhos${}^*$, J. E. Vogt, R. Balestriero, W. Brendel, D. Klindt.
+\emph{ICLR 2025} --- {\color{customblue}\textbf{Oral}} (top 1.8\%).
+
+\item[]\textbf{From Superposition to Sparse Codes: Interpretable Representations in Neural Networks.}
+D. Klindt, C. O'Neill, {\color{customblue}\textbf{Patrik Reizinger}}, H. Maurer, N. Miolane.
+\emph{Nature Machine Intelligence} (accepted, 2025).
+
+\item[]\textbf{Identifiable Exchangeable Mechanisms for Causal Structure and Representation Learning.}
+{\color{customblue}\textbf{Patrik Reizinger}}${}^*$, S. Guo${}^*$, F. Huszár, B. Schölkopf, W. Brendel.
+\emph{ICLR 2025} --- {\color{customblue}\textbf{Spotlight}}.
+
+\item[]\textbf{Position: An Empirically Grounded Identifiability Theory Will Accelerate Self-Supervised Learning Research} (the \textbf{SITH} programme).
+{\color{customblue}\textbf{Patrik Reizinger}}${}^*$, R. Balestriero, D. Klindt, W. Brendel.
+\emph{ICML 2025}.
+
+\item[]\textbf{Position: Understanding LLMs Requires More Than Statistical Generalization.}
+{\color{customblue}\textbf{Patrik Reizinger}}${}^*$, S. Ujváry${}^*$, A. Mészáros${}^*$, A. Kerekes${}^*$, W. Brendel, F. Huszár.
+\emph{ICML 2024} --- {\color{customblue}\textbf{Spotlight}} (top 3.5\%).
+
+\item[]\textbf{Rule Extrapolation in Language Modeling: A Study of Compositional Generalization on OOD Prompts.}
+A. Mészáros, S. Ujváry, W. Brendel, {\color{customblue}\textbf{Patrik Reizinger}}${}^\dagger$, F. Huszár${}^\dagger$.
+\emph{NeurIPS 2024} --- {\color{customblue}\textbf{Spotlight}}.
+\end{itemize}
+
+\subsection*{Full list}
+
+\nocite{*}
+\printbibliography[heading=none]
+
+${}^*$ denotes joint first, ${}^\dagger$ joint senior authorship.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\en{Grants and Funding}{Ösztöndíjak}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cventry{2026}{IVADO Postdoctoral Research Fellowship}{ Canada First Excellence Research Fund}{CAD 100,000/year for 2 years}{}{}{}
@@ -262,17 +306,6 @@ Doctoral researcher in causal and self-supervised representation learning (IMPRS
 \cventry{2022--2023}{ELLIS Travel Grant}{Travel support from the ELLIS netweork for my exchange at the University of Cambridge}{}{}{}{}
 \cventry{2022}{NeurIPS Scholar Award}{Conference support for accepted authors/participants}{}{}{}{}
 \cventry{2016,2018}{\en{New National Excellence Program Research Grant}{Új Nemzeti Kiválóság Program Kutatási Ösztöndíj}}{\en{Ministry of Innovation and Technology Hungary}{Innovációs és Technológiai Minisztérium}}{top 0.3\%}{Competitive research grant for university students}{}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Publications
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\nocite{*}
-% \bibliographystyle{unsrt}
-% \bibliography{publications}
-
-\printbibliography
-
-${}^*$ denotes joint first, ${}^\dagger$ joint senior authorship.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\en{Talks}{Előadások}}
@@ -304,7 +337,7 @@ Estimating Treatment Effects with Independent Component Analysis}{4th MCML Works
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Outreach \& Community Service}
+\section{\en{Service \& Outreach}{Szolgálat és Közösségépítés}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \cventry{2024}{Organizer}{CALM: First Workshop on
 Causality and Large Models}{NeurIPS 2024}{}{}
@@ -315,6 +348,7 @@ Causality and Large Models}{NeurIPS 2024}{}{}
 \cventry{2020--ongoing}{\en{Coordinator}{Koordinátor}}{\en{}{Magyar} Machine Learning Journal Club \en{for Hungarian Students}{}}{}{}{}
 \cventry{2020}{Program Committee Member}{6th International Conference on Machine Learning, Optimization, and Data Science}{}{}{}
 \cventry{2016}{E-learning Developer}{EduBase}{}{}{\en{Video series for the Digital Design I. university course}{Videósorozat készítése a Digitális Technika I. egyetemi kurzushoz}}
+\cvitem{\en{Reviewing}{Bíráló}}{JMLR; ICML 2025/2026 position paper track; ICLR 2025/2026; NeurIPS 2024/2025; CLeaR 2024/2025; AISTATS 2026; UAI 2026; NeurIPS 2023/2024 workshops; Infocommunications Journal}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -328,13 +362,6 @@ Causality and Large Models}{NeurIPS 2024}{}{}
 \cventry{2023--ongoing}{Anna Mészáros}{M.Sc.$\to$ Ph.D. at the University of Cambridge}{}{}{}
 \cventry{2022--2025}{Boglárka Ecsedi}{B.Sc. at GeorgiaTech$\to$Ph.D. at the University of Toronto}{}{}{}
 
-\clearpage
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\en{Reviewing}{Bíráló}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\cventry{}{\mdseries JMLR, ICML 2025/2026 position paper track, ICLR 2025/2026, NeurIPS 2024/2025, CLeaR 2024/2025, AISTATS 2026, UAI 2026, NeurIPS 2023/2024 workshops, Infocommunications Journal}{}{}{}{}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\en{Teaching}{Oktatás}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -343,18 +370,22 @@ Causality and Large Models}{NeurIPS 2024}{}{}
 
 % \clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\en{Extracurriculars \& Coursework}{Kiegészítő Tanulmányok}}
+\section{\en{Research \& Technical Training}{Szakmai Kurzusok}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\cventry{2024.07--ongoing}{Performance Psychology, Leadership}{The Growth Equation Academy}{online}{}{}
-\cventry{2023.11--ongoing}{Coaching, Exercise Physiology, Biomechanics}{The Scholar Program}{online}{}{}
 \cventry{2023.12.}{CI/CD for Machine Learning certification}{Weights and Biases}{online}{}{}
 \cventry{2022.07.}{ELLIS Cambridge Unit Machine Learning Summer School}{ELLIS Cambridge Unit}{Cambridge, UK}{}{}
 \cventry{2022.07.}{Machine Learning Summer School}{ML in PL}{\en{Krakow}{Krakkó}, \en{Poland}{Lengyelország}}{}{}
-\cventry{2021.04.}{A Young Leader’s Guide to Risk}{McChrystal Group}{Budapest, \en{Hungary}{Magyarország}}{}{}
 \cventry{2020.09.}{Ladybird Guide to Spacecraft Operations Workshop}{European Space Agency}{online}{}{}
 \cventry{2020.07.}{Eastern European Machine Learning Summer School}{ML in PL}{online}{}{}
 \cventry{2019.07.}{International Summer School on Deep Learning}{IRDTA}{\en{Warsaw}{Varsó}, \en{Poland}{Lengyelország}}{}{}
 \cventry{2019.01.}{Concurrent Design Workshop}{European Space Agency}{ESEC-Galaxia, Redu, Belgium}{}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\en{Leadership \& Personal Development}{Vezetői és Személyiségfejlesztő Kurzusok}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cventry{2024.07--ongoing}{Performance Psychology, Leadership}{The Growth Equation Academy}{online}{}{}
+\cventry{2023.11--ongoing}{Coaching, Exercise Physiology, Biomechanics}{The Scholar Program}{online}{}{}
+\cventry{2021.04.}{A Young Leader’s Guide to Risk}{McChrystal Group}{Budapest, \en{Hungary}{Magyarország}}{}{}
 \cventry{2018--2020}{Leadership Academy}{Mathias Corvinus Collegium}{Budapest, \en{Hungary}{Magyarország}}{}{}
 \cventry{2018.11.}{Traction Europe Case Studies for Outstanding Engineering Students}{Boston Consulting Group}{\en{Paris}{Párizs}, \en{France}{Franciaország}}{}{}
 \cventry{2016--2018}{\en{Business and Economics Specialization}{Közgazdaságtan és Business Szakirány}}{Mathias Corvinus Collegium}{Budapest, \en{Hungary}{Magyarország}}{}{}
@@ -372,12 +403,12 @@ Causality and Large Models}{NeurIPS 2024}{}{}
 % % \cvskillentry*[1em]{Methods}{4}{SCRUM}{8}
 
 
-\cvitem{Soft skills}{
-Leadership,
-Scientific writing,
-Project management,
-Assertive communication,
-Storytelling
+\cvitem{Soft skills}{%
+\textbf{Leadership} (NeurIPS 2024 CALM Workshop; IMPRS-IS Bootcamp; ELLIS Doctoral Symposium);
+\textbf{Scientific writing} (\emph{Path to PhD} newsletter; reviewing for ICML/ICLR/NeurIPS/CLeaR/AISTATS);
+\textbf{Project management} (supervising six students across IMPRS-IS, EPFL, Cambridge, Toronto, Tübingen);
+\textbf{Assertive communication} (three ICML position papers, each setting an agenda the field has since taken up);
+\textbf{Storytelling} (15+ invited talks since 2022 at Mila, LMU Munich, Waterloo, et al.)
 }
 
 \cvitem{Languages}{
