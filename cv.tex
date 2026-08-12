@@ -115,6 +115,16 @@ maxnames=99
 
 \iftoggle{en}{}{\renewcommand\refname{Publikációk}}
 
+% Variant switch: a thin wrapper (e.g. cv_noca.tex) does
+%   \def\NOCANADA{}  \input{cv.tex}
+% to drop every mention of the Montréal move and state the expected Ph.D. end date.
+\newtoggle{canada}\toggletrue{canada}   % show the incoming UdeM/Mila postdoc + IVADO / NSERC Impact+
+\newtoggle{phdend}\togglefalse{phdend}  % show expected Ph.D. completion
+\ifdefined\NOCANADA
+  \togglefalse{canada}
+  \toggletrue{phdend}
+\fi
+
 \newdateformat{hundate}{\THEYEAR.\twodigit{\THEMONTH}.\twodigit{\THEDAY}.}
 
 
@@ -185,7 +195,7 @@ maxnames=99
 
 
 \cvsummary{%
-Doctoral researcher in causal and self-supervised representation learning (IMPRS-IS, ELLIS), building theory that explains \emph{when and why neural networks generalize}. Recognized with an ICLR 2025 Oral (top 1.8\%) and Spotlight, a NeurIPS 2024 Spotlight, and a paper accepted in \emph{Nature Machine Intelligence}. Three ICML position papers set agendas for self-supervised, LLM, and interpretability research. Beyond research, I write the \emph{Path to PhD} newsletter and train in leadership, exercise physiology, and the psychology of high performance.
+Doctoral researcher in causal and self-supervised representation learning (IMPRS-IS, ELLIS), building theory that explains \emph{when and why neural networks generalize}. \iftoggle{canada}{\en{From September 2026 I join Mila and the Université de Montréal as a postdoctoral fellow with Simon Lacoste-Julien and Dhanya Sridhar, working on robust language models via identifiable causal mechanisms.}{} }{}Recognized with an ICLR 2025 Oral (top 1.8\%) and Spotlight, a NeurIPS 2024 Spotlight, and a paper in \emph{Nature Machine Intelligence}. Three ICML position papers set agendas for self-supervised, LLM, and interpretability research. Beyond research, I write the \emph{Path to PhD} newsletter and train in leadership, exercise physiology, and the psychology of high performance.
 % I confirm full availability for the 75th Lindau Nobel Laureate Meeting.
 % I confirm availability for the full meeting week and aim to contribute a cross-disciplinary perspective connecting physics-grounded modeling with robust ML for science.
 }
@@ -202,7 +212,7 @@ Doctoral researcher in causal and self-supervised representation learning (IMPRS
 % {localization}{optional: grade/...}
 % {optional: comment/job description}
 
-\cventry{2021--\en{ongoing}{jelenleg}}{Machine Learning Ph.D.}{International Max Planck Research School for Intelligent Systems/ELLIS Institute Tübingen}{Tübingen, \en{Germany}{Németország}}{}{\textbf{\en{Thesis}{Tézis}:} Causal Representation Learning\\ \textbf{\en{Supervisors}{Témavezetők}:} Wieland Brendel, \en{Ferenc Huszár}{Huszár Ferenc}, Matthias Bethge, Bernhard Schölkopf\\
+\cventry{2021.04--\iftoggle{phdend}{2026.09.}{\en{ongoing}{jelenleg}}}{Machine Learning Ph.D.}{International Max Planck Research School for Intelligent Systems/ELLIS Institute Tübingen}{Tübingen, \en{Germany}{Németország}}{}{\iftoggle{phdend}{\textbf{\en{Expected completion}{Várható befejezés}:} 2026.09.\\}{}\textbf{\en{Thesis}{Tézis}:} Causal Representation Learning\\ \textbf{\en{Supervisors}{Témavezetők}:} Wieland Brendel, \en{Ferenc Huszár}{Huszár Ferenc}, Matthias Bethge, Bernhard Schölkopf\\
 \textbf{ELLIS \en{exchange at the}{csereprogram,} University of Cambridge:} 2022.10--2023.03.}
 
 \cventry{2019--2021}{\en{Electrical Engineering M.Sc.}{Villamosmérnök M.Sc.}}{\en{Budapest University of Technology and Economics}{Budapesti Műszaki és Gazdaságtudományi Egyetem}}{Budapest, \en{Hungary}{Magyarország}}{GPA~5.0/5.0 (\en{valedictorian}{évfolyamelső})}{\textbf{\en{Thesis}{Diplomamunka}:} \en{Development of an Attitude Determination and Control System for CubeSats on LEO orbits}{Orientációmeghatározó és -szabályozó alrendszer fejlesztése LEO pályán működő kisműholdakhoz}\\
@@ -223,7 +233,7 @@ Doctoral researcher in causal and self-supervised representation learning (IMPRS
 \begin{itemize}\setlength{\itemsep}{3pt}\setlength{\parskip}{0pt}
 \item[]\textbf{A unifying framework from neural superposition to sparse interpretable codes.}
 D. Klindt, C. O'Neill, {\color{customblue}\textbf{Patrik Reizinger}}, H. Maurer, N. Miolane.
-\emph{Nature Machine Intelligence} (accepted, 2026).
+\emph{Nature Machine Intelligence} 8(7):1025--1037 (2026).
 
 \item[]\textbf{Position: An Empirically Grounded Identifiability Theory Will Accelerate Self-Supervised Learning Research}.
 {\color{customblue}\textbf{Patrik Reizinger}}\textsuperscript{*}, R. Balestriero, D. Klindt, W. Brendel.
@@ -277,6 +287,7 @@ A. Mészáros, S. Ujváry, W. Brendel, {\color{customblue}\textbf{Patrik Reizing
 \section{\en{Honors and Awards}{Díjak és Kitüntetések}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\cventry{2026}{Fellow, Big-if-True Science Accelerator}{\en{Renaissance Philanthropy \& SPRIND}{}}{\en{Second cohort, 8 fellows}{}}{\en{Designing a public Challenge program for AI-assisted verification of science, mentored by DARPA and ARPA-H program managers}{}}{}{}
 \cventry{2023,2024}{Qualcomm Innovation Fellowship Europe}{Qualcomm}{\en{Finalist}{Döntő}}{AI/cybersecurity fellowship; finalists present to Qualcomm judges}{}{}
 % \cventry{2023}{\en{$\mathbf{4^{\mathrm{th}}}$ Place at German University Rowing Championship}{ $\mathbf{4.}$ helyezés a Német Egyetemi Evezős Bajnokságban}}{\en{German Rowing Association}{Deutscher Ruderverband}}{\en{Coxed Men's Quad}{Kormányzott négypárevezős} $500\ \mathrm{m}$}{}{}{}
 
@@ -300,8 +311,10 @@ A. Mészáros, S. Ujváry, W. Brendel, {\color{customblue}\textbf{Patrik Reizing
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\en{Grants and Funding}{Ösztöndíjak}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\iftoggle{canada}{%
 \cventry{2026}{IVADO Postdoctoral Research Fellowship}{ Canada First Excellence Research Fund}{CAD 100,000/year for 2 years}{}{}{}
 \cventry{2026}{Canada Impact+ Postdoctoral Research Training Award}{ Natural Sciences and Engineering Research Council of Canada}{CAD 140,000 for 2 years}{Declined}{}{}
+}{}
 \cventry{2025}{ICLR Scholar Award}{Conference support for accepted authors}{}{}{}{}
 \cventry{2022--2023}{ELLIS Travel Grant}{Travel support from the ELLIS netweork for my exchange at the University of Cambridge}{}{}{}{}
 \cventry{2022}{NeurIPS Scholar Award}{Conference support for accepted authors/participants}{}{}{}{}
@@ -339,16 +352,18 @@ Estimating Treatment Effects with Independent Component Analysis}{4th MCML Works
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\en{Service \& Outreach}{Szolgálat és Közösségépítés}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cventry{2026}{Organizer}{\href{https://interpscience.github.io/}{Interpretability as a Science: Toward Rigorous Foundations for Understanding LLMs}}{NeurIPS 2026}{}{}
+\cventry{2026}{Organizer}{Tutorial: Causal Foundations for Interpretability --- What Your Methods Actually Identify}{EMNLP 2026}{}{\en{Selected from a record 56 proposals (25\% accepted across EMNLP and AACL)}{}}
 \cventry{2024}{Organizer}{CALM: First Workshop on
 Causality and Large Models}{NeurIPS 2024}{}{}
 \cventry{2023,2024}{Organizer}{IMPRS-IS Bootcamp}{International Max Planck Research School for Intelligent Systems}{}{}
 \cventry{2022,2023}{Organizer}{ELLIS Doctoral Symposium}{ELLIS}{}{}
 \cventry{2022--ongoing}{\en{Academic Knowledge Transfer}{}}{\en{The Path to PhD blog}{}}{\href{https://path2phd.substack.com}{path2phd.substack.com}}{}{}
 \cventry{2021--ongoing}{\en{Thesis committee member}{Szakdolgozat Bíráló}}{\en{Budapest University of Technology and Economics}{Budapesti Műszaki és Gazdaságtudományi Egyetem}}{}{}{}
-\cventry{2020--ongoing}{\en{Coordinator}{Koordinátor}}{\en{}{Magyar} Machine Learning Journal Club \en{for Hungarian Students}{}}{}{}{}
+\cventry{2020--2025}{\en{Coordinator}{Koordinátor}}{\en{}{Magyar} Machine Learning Journal Club \en{for Hungarian Students}{}}{}{}{}
 \cventry{2020}{Program Committee Member}{6th International Conference on Machine Learning, Optimization, and Data Science}{}{}{}
 \cventry{2016}{E-learning Developer}{EduBase}{}{}{\en{Video series for the Digital Design I. university course}{Videósorozat készítése a Digitális Technika I. egyetemi kurzushoz}}
-\cvitem{\en{Reviewing}{Bíráló}}{JMLR; ICML 2025/2026 position paper track; ICLR 2025/2026; NeurIPS 2024/2025; CLeaR 2024/2025; AISTATS 2026; UAI 2026; NeurIPS 2023/2024 workshops; Infocommunications Journal}
+\cvitem{\en{Reviewing}{Bíráló}}{JMLR; ICML 2025/2026 and NeurIPS 2026 position paper tracks; ICLR 2025/2026; NeurIPS 2024/2025; CLeaR 2024/2025; AISTATS 2026; UAI 2026; NeurIPS 2023/2024 workshops; Infocommunications Journal}
 \cvitem{\en{Open-source tools}{Nyílt forrású eszközök}}{%
 \href{https://github.com/rpatrik96/hallmark}{\textsc{Hallmark}} --- benchmark for citation-hallucination detection in scientific writing\newline
 \href{https://github.com/rpatrik96/bibtexupdater}{\texttt{bibtexupdater}} --- automatic preprint-to-published BibTeX migration and reference validation\newline
@@ -357,10 +372,11 @@ Causality and Large Models}{NeurIPS 2024}{}{}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\clearpage
 \section{Mentoring}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \cventry{2024--ongoing}{Simon Hanrath}{M.Sc. at the University of Tübingen}{}{}{}
+\cventry{2026--ongoing}{Karim Zaghw}{M.Sc. at the University of Tübingen}{}{}{}
+\cventry{2026--ongoing}{Kayoon Kim}{M.Sc. at the University of Tübingen}{}{}{}
 \cventry{2025--ongoing}{Hsun-Yu Kuo}{M.Sc. at EPFL}{}{}{}
 \cventry{2025}{Samuel Innes}{B.Sc. at Heidelberg$\to$ M.Sc. at the University of Cambridge}{}{}{}
 \cventry{2023--ongoing}{Bálint Mucsányi}{M.Sc.$\to$ Ph.D. at the University of Tübingen}{}{}{}
@@ -379,8 +395,8 @@ Causality and Large Models}{NeurIPS 2024}{}{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\en{Research \& Technical Training}{Szakmai Kurzusok}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\cventry{2023.12.}{CI/CD for Machine Learning certification}{Weights and Biases}{online}{}{}
 \cventry{2026.08.}{International Summer School Marktoberdorf --- Engineering Secure and Dependable Software Systems}{TU München \& fortiss}{Herrsching, \en{Germany}{Németország}}{}{}
+\cventry{2023.12.}{CI/CD for Machine Learning certification}{Weights and Biases}{online}{}{}
 \cventry{2022.07.}{ELLIS Cambridge Unit Machine Learning Summer School}{ELLIS Cambridge Unit}{Cambridge, UK}{}{}
 \cventry{2022.07.}{Machine Learning Summer School}{ML in PL}{\en{Krakow}{Krakkó}, \en{Poland}{Lengyelország}}{}{}
 \cventry{2020.09.}{Ladybird Guide to Spacecraft Operations Workshop}{European Space Agency}{online}{}{}
@@ -411,11 +427,13 @@ Causality and Large Models}{NeurIPS 2024}{}{}
 
 
 \cvitem{Soft skills}{%
-\textbf{Leadership} (NeurIPS 2024 CALM Workshop; IMPRS-IS Bootcamp; ELLIS Doctoral Symposium);
-\textbf{Scientific writing} (\emph{Path to PhD} newsletter; reviewing for ICML/ICLR/NeurIPS/CLeaR/AISTATS);
+\textbf{Leadership} (co-organizing NeurIPS workshops in 2024 and 2026; IMPRS-IS Bootcamp; ELLIS Doctoral Symposium);
+\textbf{Program design} (Big-if-True Science Accelerator fellow, designing a public Challenge program under DARPA and ARPA-H program-manager mentorship);
+\textbf{Mentoring} (eight students since 2022, four of whom continued to a Ph.D.);
+\textbf{Scientific writing} (\emph{Nature Machine Intelligence}; \emph{Path to PhD} newsletter; reviewing for JMLR/ICML/ICLR/NeurIPS/CLeaR/AISTATS/UAI);
 \textbf{Project management} (leading multi-institution research collaborations across Mila, Vector Institute, IMPRS-IS, and Cambridge);
 \textbf{Assertive communication} (three ICML position papers staking out research directions);
-\textbf{Storytelling} (15+ invited talks since 2022 at Mila, LMU Munich, Waterloo, et al.)
+\textbf{Teaching \& storytelling} (EMNLP 2026 tutorial; 11 invited talks since 2022 at Mila, Vector Institute, Waterloo, et al.)
 }
 
 \cvitem{Languages}{
@@ -423,7 +441,7 @@ English (C2),
 German (C2),
 Hungarian (native),
 Italian (A2),
-French (A1),
+French (A1)
 }
 
 % \cvitem{Soft skills}{\begin{itemize}

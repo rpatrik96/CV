@@ -1,0 +1,18 @@
+# Local-only CV variants — never commit these.
+# cv_noca: drops the Canadian postdoc funding, states the expected Ph.D. end date.
+cv_noca.tex
+cv_noca.pdf
+cv_fairs.tex
+cv_fairs.pdf
+
+# LaTeX build artifacts (cv.pdf itself is tracked — the CI deploys it)
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.xdv
