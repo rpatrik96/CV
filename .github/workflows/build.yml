@@ -34,28 +34,25 @@ jobs:
         with:
           name: cv.log
           path: ./cv.log
-          
-      - name: move
-        run: mkdir -p github_artifacts && mv ./cv.pdf ./github_artifacts/
-      - name: Upload pdf as artifact
-        uses: actions/upload-artifact@v7
-        with:
-          name: cv.pdf
-          path: ./github_artifacts
           overwrite: true
+
   deploy:
     needs: [build-template]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-      - uses: actions/download-artifact@v8
+
+      # Downloaded straight into the published layout: the site's
+      # navigation.yml links to /CV/github_artifacts/cv.pdf, so that
+      # directory name is part of the public URL and must not change.
+      - name: Collect artifacts
+        uses: actions/download-artifact@v8
         with:
-          path: github_artifacts
+          path: github_deploy/github_artifacts
           merge-multiple: true
-      - name: move
-        run: mkdir -p github_deploy && mv /home/runner/work/CV/CV/github_artifacts github_deploy
-      - name: deploy on orphan branch
+
+      - name: Deploy on orphan branch
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
