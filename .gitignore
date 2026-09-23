@@ -4,6 +4,9 @@ cv_noca.tex
 cv_noca.pdf
 cv_fairs.tex
 cv_fairs.pdf
+# Cover letters and the letter+CV bundles built from them (see CLAUDE.md).
+coverletter_*.tex
+bundle_*.pdf
 
 # LaTeX build artifacts (cv.pdf itself is tracked — the CI deploys it)
 *.aux

@@ -178,6 +178,16 @@ maxnames=99
 
 \begin{document}
 
+% Optional cover letter in front of the CV, for single-file applications:
+% latexmk -pdflua -jobname=bundle_<name> -usepretex='\def\coverletter{coverletter_<name>}' cv.tex
+% The group keeps the letter's \raggedright from leaking into the CV.
+\ifdefined\coverletter
+  \begingroup
+  \input{\coverletter}
+  \clearpage
+  \endgroup
+\fi
+
 \makecvtitle % Print the CV title
 
 
