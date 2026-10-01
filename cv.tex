@@ -187,6 +187,9 @@ maxnames=99
   \clearpage
   \endgroup
 \fi
+% Letter alone, for forms that take the letter and the CV as separate files:
+% add \def\letteronly{} to -usepretex.
+\ifdefined\letteronly\def\next{\end{document}}\else\let\next\relax\fi\next
 
 \makecvtitle % Print the CV title
 
