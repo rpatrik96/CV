@@ -7,6 +7,7 @@ cv_fairs.pdf
 # Cover letters and the letter+CV bundles built from them (see CLAUDE.md).
 coverletter_*.tex
 bundle_*.pdf
+letter_*.pdf
 
 # LaTeX build artifacts (cv.pdf itself is tracked — the CI deploys it)
 *.aux
